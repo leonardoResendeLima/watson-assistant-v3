@@ -1,8 +1,11 @@
 {
-    "name": "@ibm-watson/assistant-simple",
+    "name": "lais-v3",
     "description": "A simple Node.js based web app which shows how to use the Watson Assistant API to recognize user intents.",
-    "version": "0.1.1",
+    "version": "0.0.1",
     "main": "server.js",
+    "author": {
+        "name": "Leonardo Lima (Pirata), Renato Aragão (Macaco) e Alexandre Cunha (Dum Dum)"
+    },
     "scripts": {
         "start": "node server.js",
         "test-integration": "casperjs test ./test/integration/test.*.js",
@@ -13,25 +16,14 @@
         "autofix": "eslint --fix .",
         "codecov": "npm run test && (codecov || true)"
     },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/watson-developer-cloud/assistant-simple.git"
-    },
-    "license": "Apache-2.0",
+    "license": "UNLICENSED",
     "dependencies": {
         "body-parser": "^1.18.3",
         "dotenv": "^6.2.0",
         "express": "^4.16.4",
+        "ibm-watson": "^4.2.1",
         "watson-developer-cloud": "^3.18.1"
     },
-    "publishConfig": {
-        "registry": "https://registry.npmjs.org/",
-        "access": "public"
-    },
-    "engines": {
-        "node": ">=8.15.0"
-    },
-    "engineStrict": true,
     "devDependencies": {
         "babel-eslint": "^10.0.1",
         "casperjs": "^1.1.4",
