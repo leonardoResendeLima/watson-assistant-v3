@@ -19,9 +19,12 @@
     "license": "UNLICENSED",
     "dependencies": {
         "body-parser": "^1.18.3",
+        "custom-env": "^1.0.2",
         "dotenv": "^6.2.0",
+        "dotenv-flow": "^2.0.0",
         "express": "^4.16.4",
         "ibm-watson": "^4.2.1",
+        "log4js": "^4.3.1",
         "watson-developer-cloud": "^3.18.1"
     },
     "devDependencies": {

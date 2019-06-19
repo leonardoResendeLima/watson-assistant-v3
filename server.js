@@ -1,11 +1,19 @@
 'use strict';
 
-require('dotenv').config({ silent: true });
+require('dotenv-flow').config({
+    path : './config/'
+})
 
-var server = require('./app');
+const log = require('./src/helpers/log')
+
 var port = process.env.PORT || 3000;
+var server = require('./src/app');
 
-server.listen(port, function () {
-    // eslint-disable-next-line
-    console.log('Server running on port: %d', port);
-});
+try {
+    server.listen(port, function () {
+        log.info(`Server is Running on port: ${port} [${process.env.NODE_ENV}]`)
+    });
+} catch (ex) {
+    console.log(ex)
+}
+

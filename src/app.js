@@ -1,32 +1,13 @@
-/**
- * Copyright 2015 IBM Corp. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 'use strict';
 
-var express = require('express'); // app server
-var bodyParser = require('body-parser'); // parser for post requests
-var AssistantV2 = require('watson-developer-cloud/assistant/v2'); // watson sdk
+var express = require('express');
+var bodyParser = require('body-parser');
+var AssistantV2 = require('ibm-watson/assistant/v2');
 
 var app = express();
 
-// Bootstrap application settings
-app.use(express.static('./public')); // load UI from public folder
+app.use(express.static('./public'));
 app.use(bodyParser.json());
-
-// Create the service wrapper
 
 var assistant = new AssistantV2({
     version: '2018-11-08'
@@ -40,7 +21,6 @@ var newContext = {
     }
 };
 
-// Endpoint to be call from the client side
 app.post('/api/message', function (req, res) {
     var assistantId = process.env.ASSISTANT_ID || '<assistant-id>';
     if (!assistantId || assistantId === '<assistant-id>>') {
